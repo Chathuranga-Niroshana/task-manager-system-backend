@@ -1,4 +1,4 @@
-This is a simple RESTful API built with Node.js, Express.js, and MongoDB (Mongoose) for managing tasks.  
+This is a RESTful API built with Node.js, Express.js, and MongoDB (Mongoose) for managing tasks.  
 It has creating, reading, updating, and deleting tasks functions with proper input validation and error handling.
 
 
