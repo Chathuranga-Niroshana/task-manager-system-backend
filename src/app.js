@@ -7,9 +7,9 @@ import taskRoutes from './routes/taskRouter.js'
 const app = express()
 connectDb()
 app.use(express.json())
-app.use(morgan())
+app.use(morgan('dev'))
 
-app.use('api/tasks', taskRoutes)
+app.use('/api/tasks', taskRoutes)
 
 app.use(errorHandler)
 

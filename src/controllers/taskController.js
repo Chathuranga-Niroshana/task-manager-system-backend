@@ -1,3 +1,4 @@
+import { taskStatus } from "../constants/taskStatus.js";
 import Task from "../models/taskModel.js";
 
 export const createTask = async (req, res, next) => {
@@ -5,6 +6,9 @@ export const createTask = async (req, res, next) => {
         const data = req.body
         if (!data.title) {
             return res.status(400).json({ message: "Title is missing" })
+        }
+        if (data.status && !taskStatus.includes(data.status)) {
+            return res.status(400).json({ message: "Status is invalid " })
         }
         const task = await Task.create(data)
         res.status(201).json({ message: 'Task created successfully.', task: task })
@@ -42,6 +46,10 @@ export const updateTaskById = async (req, res, next) => {
     try {
         const { id } = req.params
         const data = req.body
+
+        if (data.status && !taskStatus.includes(data.status)) {
+            return res.status(400).json({ message: "Status is invalid " })
+        }
 
         const updatedTask = await Task.findByIdAndUpdate(id, data, { new: true, runValidators: true })
         if (!updatedTask) {
