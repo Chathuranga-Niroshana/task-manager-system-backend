@@ -24,3 +24,10 @@ for run application
 2. npm install
 3. npm run dev    // this will run with nodemon
 (optional:) npm start    // this will start the server
+
+
+github repository:  https://github.com/Chathuranga-Niroshana/task-manager-system-backend.git
+
+
+J.M. Chathuranga Niroshana
+niroshana.c.n.j@gmail.com
